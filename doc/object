@@ -1,0 +1,82 @@
+- Object.assign(target,source):
+
+* nhận 2 tham số
+
+  +target:đích
+  +source:nguồn
+  => sử dụng khi mình muốn hợp nhất 2 object. Object.assign => nó sẽ hợp nhất object 'nguồn' vào object 'đích'. Nếu object "nguồn" có trùng key với "đích" thì,key của object "nguồn" sẽ ghi đè lên object "đích"
+  vd:
+  const target = { a: 1, b: 2 }; // object 1
+  const source = { b: 4, c: 5 }; // object 2
+  Object.assign(target, source); // object 2 > object 1 (có trùng key b => object 2 sẽ ghi đè key của object 1)
+
+console.log(target); // {a: 1, b: 4, c: 5}
+
+- lưu ý : nếu object "đích là 1 object trống nó sẽ tạo ra 1 object mới"
+
+- Object.create()
+
+* dùng để tạo 1 object mới
+
+-Object.defineProperties()
+
+- dùng để xác định mới hoặc sửa đổi các thuộc tính hiện có trên 1 đối tượng => trả về 1 object
+- lưu ý : Nếu thêm thuộc writable = true nó sẽ cho phép mình sửa đổi value (mặc định là ko đc sửa đổi)
+
+-Object.defineProperty()
+
+- dùng để định nghĩa 1 thuộc tính của 1 object
+
+* Object.entries
+
+- trả về 1 mảng key: value => của object
+
+- Object.freeze()
+
+* dùng để đóng băng 1 đối tượng nó sẽ làm cho 1 object ko thể thay thế thuộc tính => và nó vẫn có thể gán lại thành 1 object mới
+
+-Object.fromEntries()
+
+- dùng để convert array to object dưới dạng key: value (nếu index của array có 1 phần tử thì value của nó sẽ là undefined)
+
+-Object.getOwnPropertyDescriptor()
+
+- trả về mô tả cấu hình của thuộc tính cụ thể trên 1 đối tượng. Nó trả về 1 đối tượng và có thể thay thế và ko hề ảnh hưởng đến đối tượng cũ
+
+-Object.getOwnPropertyDescriptors()
+
+- trả về tất cả các bộ thuộc tính riêng của 1 đối tượng.Và có thể thay thế 1 thuộc tính cũng như ko ảnh hưởng đến đối tượng cũ
+
+-Object.getOwnPropertyNames()
+
+- trả về tất cả các key của một 1 object dưới dạng array
+
+-Object.getPrototypeOf()
++trả về chính object đó
+
+-Object.hasOwn(object,thuộc tính)
++trả về kiểu boolean. dùng để kiểu tra xem object có thuộc tính đó ko
+
+-Object.is()
++kiểm tra xem hai giá trị có cùng nhau không => trả về boolean
+
+-Object.isExtensible()
++kiểm tra xem object có được mở rộng đc hay không (tức là có thể thêm đc thuộc tính và phương thức) => return boolean
+
+-Object.isFrozen()
++kiểm tra xem 1 object có bị đóng băng hay ko (tức là có thể thay đổi thêm hoặc sửa xóa) => return boolean
+
+-Object.isSealed()
++kiểm tra xem 1 đối tượng có bị niêm phong hay ko(tức là thuộc tính của 1 object có thể đc hay đổi bằng 1 giá trị khác nhưng ko thể delete hoặc add thêm thuộc tính) => return boolean
+
+-Object.keys()
++Trả về 1 array gồm các key của 1 object
+
+-Object.preventExtensions()
++Ngăn chặn ko cho thêm thuộc tính vào 1 object
+
+-Object.seal();
++dùng để niêm phong 1 object => tức là thuộc tính của 1 object có thể đc hay đổi bằng 1 giá trị khác nhưng ko thể delete hoặc add thêm thuộc tính
+
+-Object.values():
++trả về 1 mảng các value của 1 object
